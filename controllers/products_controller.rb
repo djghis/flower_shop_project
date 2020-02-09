@@ -21,3 +21,8 @@ post '/products' do
   @product.save()
   redirect to("/products")
 end
+
+get '/products/:id' do
+  @product = Product.find(params[:id])
+  erb (:"products/show")
+end

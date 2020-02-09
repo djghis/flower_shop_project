@@ -36,6 +36,14 @@ class Supplier
     SqlRunner.run(sql, values)
   end
 
+  def delete()
+    sql = "DELETE FROM suppliers
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run( sql, values )
+  end
+
+
   def self.all()
     sql = "SELECT * FROM suppliers"
     results = SqlRunner.run( sql )
