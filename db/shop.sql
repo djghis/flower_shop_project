@@ -6,7 +6,9 @@ CREATE TABLE suppliers
 (
    id SERIAL PRIMARY KEY,
    name VARCHAR(255),
-   contact_details TEXT
+   adress VARCHAR(255),
+   phone VARCHAR(255),
+   email VARCHAR(255)
   );
 
 CREATE TABLE products
@@ -14,9 +16,9 @@ CREATE TABLE products
   id  SERIAL PRIMARY KEY,
   name VARCHAR(255) not null,
   description TEXT,
-  supplier_id INT REFERENCES products(id),
-  buy cost INT,
-  sell price INT
+  supplier_id INT REFERENCES suppliers(id),
+  buy_cost INT,
+  sell_price INT
   );
 
 CREATE TABLE stocks
