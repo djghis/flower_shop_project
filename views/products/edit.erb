@@ -1,0 +1,19 @@
+<h1>Edit Product</h1>
+
+
+
+<form method="post" action="/products/<%= @product.id %>">
+  <label for="name">Name: </label>
+    <input id="name" type="text" name="name" value=<%= @product.name %>>
+
+  <label for="description">Description: </label>
+    <input id="description" type="text" name="description" value=<%= @product.description %>>
+
+  <label for="buy_cost">Buying price: </label>
+    <input id="buy_cost" type="number" name="buy_cost" value=<%= @product.buy_cost %>>
+
+  <label for="sell_price">Selling price: </label>
+    <input id="sell_price" type="number" name="sell_price" value=<%= @product.sell_price %>>
+    <input type="submit"  value="Edit products">
+
+</form>

@@ -22,9 +22,9 @@ post '/products' do
   redirect to("/products")
 end
 
-get '/product/:id/edit' do
+get '/products/:id/edit' do
   @product = Product.find(params[:id])
-  erb (:"product/edit")
+  erb (:"products/edit")
 end
 
 get '/products/:id' do
