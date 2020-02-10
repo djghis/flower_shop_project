@@ -1,0 +1,18 @@
+<h1>Show Stock</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Quantity</th>
+  </tr>
+  <% for product in @products %>
+  <tr>
+    <td>
+      <a href="/stocks/<%= product.id %>"><%= product.name %></a></td>
+      <td></td>
+      <td><%= stock.quantity %></td>
+  </tr>
+  <% end %>
+
+</table>

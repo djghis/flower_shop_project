@@ -30,12 +30,27 @@ class Product
     @id = results.first()['id'].to_i
   end
 
+  def find_supplier()
+    sql = "SELECT * FROM suppliers WHERE id = $1"
+    values = [@supplier_id]
+    supplier = SqlRunner.run(sql, values)[0]
+    result = Supplier.new(supplier)
+    return result.name
+  end
+
+  # def supplier()
+  #   supplier = Supplier.find(@supplier_id)
+  #   return supplier
+  # end
+
+
+
   def update
     sql = "UPDATE products SET (name, description, buy_cost, sell_price) = ($1, $2, $3, $4) WHERE id = $5"
     values = [@name, @description, @buy_cost, @sell_price, @id]
     SqlRunner.run(sql, values)
   end
-  
+
   def delete()
     sql = "DELETE FROM products
     WHERE id = $1"

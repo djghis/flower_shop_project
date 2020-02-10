@@ -9,13 +9,15 @@ class Stock
     @quantity = options['quantity'].to_i
   end
 
-  def product_name()
+  def self.product_name()
     sql = "SELECT name FROM products Where product_id = $1"
     values = [@product.id]
     products = SqlRunner.run(sql, values)
     product = products.map {|product| Product.new(product)}
     return product
   end
+
+
 
 
   def save()

@@ -1,18 +1,19 @@
 require ('sinatra')
-require ('sinatra/contriv/all')
+require ('sinatra/contrib/all')
 require ('pry-byebug')
 
 require_relative("../models/stock")
+require_relative("../models/product")
 
 also_reload("../models*")
 
 get '/stocks' do
-    @stock = Stock.all()
+    @product = Stock.product_name()
     erb (:"stock/index")
 end
 
 get '/stocks/new' do
-    erb (:"stocks/new")
+    erb (:"stock/new")
 end
 
 post '/stocks/:id' do
@@ -31,12 +32,12 @@ end
 
 get '/stocks/:id/edit' do
   @stock = Stock.find(params[:id])
-  erb (:"stocks/edit")
+  erb (:"stock/edit")
 end
 
 get '/stocks/:id' do
   @stock = Stock.find(params[:id])
-  erb (:"stocks/show")
+  erb (:"stock/show")
 end
 
 

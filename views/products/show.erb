@@ -2,6 +2,7 @@
 <p>Description: <%= @product.description %></p>
 <p>Buying price: <%= @product.buy_cost %></p>
 <p>Selling price: <%= @product.sell_price %></p>
+<p>Supplier: <%= @product.find_supplier %></p>
 
 <form class="" action="/products/<%= @product.id %>/delete" method="post">
   <input type="submit"  value="Delete product">
