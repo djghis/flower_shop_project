@@ -21,3 +21,28 @@ post '/suppliers' do
   @supplier.save()
   redirect to ("suppliers")
 end
+
+get '/suppliers/:id' do
+  @supplier = Supplier.find(params[:id])
+  erb (:"suppliers/show")
+end
+
+
+
+post '/suppliers/:id' do
+  @supplier = Supplier.new(params)
+  @supplier.update()
+  redirect to("/suppliers")
+end
+
+get '/suppliers/:id/edit' do
+  @supplier = Supplier.find(params[:id])
+  erb (:"suppliers/edit")
+end
+
+post '/suppliers/:id/delete' do
+  id = params[:id]
+  supplier = Supplier.find(id)
+  supplier.delete()
+  redirect to ("suppliers")
+end

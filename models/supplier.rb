@@ -8,7 +8,7 @@ class Supplier
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @adress = options['adress']
-    @phone = options['phone'].to_i
+    @phone = options['phone']
     @email = options['email']
   end
 
@@ -31,7 +31,7 @@ class Supplier
   end
 
   def update
-    sql = "UPDATE stocks SET (name, adress, phone, email) = ($1, $2, $3, $4) WHERE id = $5"
+    sql = "UPDATE Suppliers SET (name, adress, phone, email) = ($1, $2, $3, $4) WHERE id = $5"
     values = [@name, @adress, @phone, @email, @id]
     SqlRunner.run(sql, values)
   end

@@ -1,0 +1,13 @@
+<h1>Supplier Details</h1>
+
+<p>Name:  <%= @supplier.name %></p>
+<p>Adress: <%= @supplier.adress %></p>
+<p>Phone: <%= @supplier.phone %></p>
+<p>Email: <%= @supplier.email %></p>
+
+<form class="" action="/suppliers/<%= @supplier.id %>/delete" method="post">
+  <input type="submit"  value="Delete supplier">
+  <!-- <input type="submit"  value="Edit supplier"> -->
+
+<a href="/suppliers/<%= @supplier.id%>/edit" class="button">Edit this supplier</a>
+</form>

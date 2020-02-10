@@ -28,11 +28,7 @@ post '/products' do
   redirect to("/products")
 end
 
-post 'products/:id' do
-  @product = Product.new(params)
-  @product.update()
-  redirect to ("/products")
-end
+
 
 get '/products/:id/edit' do
   @product = Product.find(params[:id])

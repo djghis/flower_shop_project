@@ -1,0 +1,17 @@
+<h1>Edit supplier</h1>
+
+<form  method="post" action="/suppliers/<%= @supplier.id %>" >
+  <label for="name">Name: </label>
+    <input id="name" type="text" name="name" value="<%= @supplier.name %>">
+
+  <label for="adress">Adress: </label>
+    <input id="adress" type="text" name="adress" value="<%= @supplier.adress %>">
+
+  <label for="phone">Phone Number: </label>
+    <input id="phone" type="text" name="phone" value="<%= @supplier.phone %>">
+
+  <label for="email">Email adress: </label>
+    <input id="email" type="text" name="email" value="<%= @supplier.email %>">
+    <input type="submit"  value="Edit supplier">
+
+</form>
