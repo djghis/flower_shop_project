@@ -22,7 +22,19 @@ post '/products' do
   redirect to("/products")
 end
 
+get '/product/:id/edit' do
+  @product = Product.find(params[:id])
+  erb (:"product/edit")
+end
+
 get '/products/:id' do
   @product = Product.find(params[:id])
   erb (:"products/show")
+end
+
+post '/products/:id/delete' do
+  id = params[:id]
+  product = Product.find(id)
+  product.delete()
+  redirect '/products'
 end
