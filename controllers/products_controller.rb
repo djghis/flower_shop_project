@@ -16,10 +16,22 @@ get '/products/new' do
     erb (:"products/new")
 end
 
+post '/products/:id' do
+  @product = Product.new(params)
+  @product.update()
+  redirect to ("/products")
+end
+
 post '/products' do
   @product = Product.new(params)
   @product.save()
   redirect to("/products")
+end
+
+post 'products/:id' do
+  @product = Product.new(params)
+  @product.update()
+  redirect to ("/products")
 end
 
 get '/products/:id/edit' do
@@ -31,6 +43,8 @@ get '/products/:id' do
   @product = Product.find(params[:id])
   erb (:"products/show")
 end
+
+
 
 post '/products/:id/delete' do
   id = params[:id]
