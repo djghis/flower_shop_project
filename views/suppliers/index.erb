@@ -1,0 +1,27 @@
+<h1>Suppliers</h1>
+
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Adress</th>
+    <th></th>
+    <th>Phone</th>
+    <th></th>
+    <th>Email</th>
+  </tr>
+  <% for supplier in @suppliers %>
+  <tr>
+    <td>
+      <a href="/suppliers/<%= supplier.id %>"><%= supplier.name %></a></td>
+      <td></td>
+      <td><%= supplier.adress %></td>
+      <td></td>
+      <td><%= supplier.phone %></td>
+      <td></td>
+      <td><%= supplier.email %></td>
+    </tr>
+  <% end %>
+
+</table>
