@@ -1,10 +1,13 @@
 body {
+
   background-image: url("../images/dandelion_background.jpg");
   background-size: cover;
   background-repeat:no-repeat;
 
 }
+
 nav ul {
+  font-size: 1.8rem;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -18,15 +21,77 @@ nav li a {
   color: #000;
   padding: 8px 16px;
   text-decoration: none;
+
 }
 
 
 nav li a:hover {
-  background-color: #4B8EC2;
+  background-color: #85B9E8;
   color: white;
+  box-shadow: -25px 26px 19px 0px #05518E;
 }
+a, a:visited { color:#000;}
 
 
 h1 {
+  font-size: 3rem;
+  font-family: Capriola;
+}
 
+/* th {
+  font-size: 1.4rem;
+}
+
+tr {
+  font-size: 1.5;
+} */
+
+.center  {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#suppliers {
+  font-family: "Amethysta", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#suppliers td, #suppliers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#suppliers tr:nth-child(even){background-color: ##5799D3;}
+
+#suppliers tr:hover {background-color: #5497D2;}
+
+#suppliers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #5497D2;
+  color: white;
+}
+#products {
+  font-family: "Amethysta", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#products td, #products th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#products tr:nth-child(even){background-color: ##5799D3;}
+
+#products tr:hover {background-color: #5497D2;}
+
+#products th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: ##5497D2;
+  color: white;
 }
