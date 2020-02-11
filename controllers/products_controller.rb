@@ -4,7 +4,7 @@ require( 'pry-byebug' )
 
 require_relative("../models/product")
 # require_relative("../models/stock")
-# require_relative("../models/supplier")
+require_relative("../models/supplier")
 also_reload("../models/*")
 
 get '/products' do
@@ -13,6 +13,7 @@ get '/products' do
 end
 
 get '/products/new' do
+    @suppliers = Supplier.all
     erb (:"products/new")
 end
 
@@ -24,6 +25,7 @@ end
 
 post '/products' do
   @product = Product.new(params)
+
   @product.save()
   redirect to("/products")
 end
@@ -31,6 +33,7 @@ end
 
 
 get '/products/:id/edit' do
+  @suppliers = Supplier.all
   @product = Product.find(params[:id])
   erb (:"products/edit")
 end

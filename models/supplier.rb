@@ -43,19 +43,19 @@ class Supplier
     SqlRunner.run( sql, values )
   end
 
-  # def find_products
-  #   sql = "SELECT * FROM products WHERE id = $1"
-  #   values = [@product_id]
-  #   product = SqlRunner.run(sql, values)[0]
-  #   result = Product.new(product)
-  #   eturn result.name
-  # end
-
-  def products()
-    products = Product.find(@product_id)
-    return products
-
+  def find_products
+    sql = "SELECT * FROM products WHERE supplier_id = $1"
+    values = [@id]
+    product = SqlRunner.run(sql, values)[0]
+    result = Product.new(product)
+    return result
   end
+
+  # def products()
+  #   products = Product.find(@product_id)
+  #   return products
+  #
+  # end
 
 
 

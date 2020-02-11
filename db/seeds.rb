@@ -30,7 +30,8 @@ product1 = Product.new({
   "description" => "Clear vase 20cm high",
   "supplier_id" => supplier1.id,
   "buy_cost" => 12,
-  "sell_price" => 20
+  "sell_price" => 20,
+  "quantity" => 5
 })
 
 product1.save()
@@ -40,24 +41,25 @@ product2 = Product.new({
   "description" => "Clear long neck vase 45cm high",
   "supplier_id" => supplier2.id,
   "buy_cost" => 9,
-  "sell_price" => 25
+  "sell_price" => 25,
+  "quantity" => 10
 })
 
 product2.save()
 
-stock1 = Stock.new({
-  "product_id" => product1.id,
-  "quantity" => 8
-})
-
-stock1.save()
-
-stock2 = Stock.new({
-  "product_id" => product2.id,
-  "quantity" => 10
-})
-
-stock2.save()
+# stock1 = Stock.new({
+#   "product_id" => product1.id,
+#   "quantity" => 8
+# })
+#
+# stock1.save()
+#
+# stock2 = Stock.new({
+#   "product_id" => product2.id,
+#   "quantity" => 10
+# })
+#
+# stock2.save()
 
 
 

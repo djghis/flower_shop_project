@@ -7,11 +7,23 @@
   <label for="description">Description: </label>
     <input id="description" type="text" name="description"/>
 
+    <label for="supplier_select">Select Supplier: </label>
+    <select name="supplier_id" id="supplier_select">
+      <% @suppliers.each do |supplier| %>
+          <option value=<%= supplier.id %>><%= supplier.name %></option>
+      <% end %>
+    </select>
+
+
   <label for="buy_cost">Buying price: </label>
     <input id="buy_cost" type="number" name="buy_cost"/>
 
   <label for="sell_price">Selling price: </label>
     <input id="sell_price" type="number" name="sell_price"/>
+
+  <label for="quantity">Quantity: </label>
+    <input id="quantity" type="number" name="quantity"/>
+
     <input type="submit"  value="Add products"/>
 
 </form>

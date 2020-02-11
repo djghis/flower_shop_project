@@ -2,7 +2,7 @@ require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require( 'pry-byebug' )
 
-# require_relative("../models/product")
+require_relative("../models/product")
 # require_relative("../models/stock")
 require_relative("../models/supplier")
 also_reload("../models/*")
@@ -24,6 +24,8 @@ end
 
 get '/suppliers/:id' do
   @supplier = Supplier.find(params[:id])
+  @products = Product.all
+  
   erb (:"suppliers/show")
 end
 

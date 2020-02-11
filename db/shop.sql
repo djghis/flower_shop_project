@@ -1,4 +1,4 @@
-DROP TABLE stocks;
+-- DROP TABLE stocks;
 DROP TABLE products;
 DROP TABLE suppliers;
 
@@ -18,12 +18,13 @@ CREATE TABLE products
   description TEXT,
   supplier_id INT REFERENCES suppliers(id),
   buy_cost INT,
-  sell_price INT
-  );
-
-CREATE TABLE stocks
-(
-  id SERIAL PRIMARY KEY,
-  product_id INT REFERENCES products(id),
+  sell_price INT,
   quantity INT
   );
+
+-- CREATE TABLE stocks
+-- (
+--   id SERIAL PRIMARY KEY,
+--   product_id INT REFERENCES products(id),
+--   quantity INT
+--   );

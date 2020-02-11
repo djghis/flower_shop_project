@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 
 class Product
 
-  attr_reader(:id, :name, :description, :supplier_id, :buy_cost, :sell_price )
+  attr_reader(:id, :name, :description, :supplier_id, :buy_cost, :sell_price, :quantity )
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -10,6 +10,8 @@ class Product
     @description = options['description']
     @buy_cost = options['buy_cost'].to_i
     @sell_price = options['sell_price'].to_i
+    @supplier_id = options['supplier_id'].to_i
+    @quantity = options['quantity'].to_i
   end
 
   def save()
@@ -18,14 +20,16 @@ class Product
     name,
     description,
     buy_cost,
-    sell_price
+    sell_price,
+    supplier_id,
+    quantity
     )
     VALUES
     (
-    $1, $2, $3, $4
+    $1, $2, $3, $4, $5, $6
     )
     RETURNING id"
-    values = [@name, @description, @buy_cost, @sell_price]
+    values = [@name, @description, @buy_cost, @sell_price, @supplier_id, @quantity]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -38,16 +42,37 @@ class Product
     return result.name
   end
 
+  def find_supplier_id()
+    sql = "SELECT * FROM suppliers WHERE id = $1"
+    values = [@supplier_id]
+    supplier = SqlRunner.run(sql, values)[0]
+    result = Supplier.new(supplier)
+    return result.id
+  end
+
   # def supplier()
   #   supplier = Supplier.find(@supplier_id)
   #   return supplier
   # end
 
+  def status
+    if @quantity == 0
+      return "Out of stock"
+
+    elsif @quantity < 0
+      return "ORDER QUICKLY"
+    elsif @quantity <= 5
+      return "Low in stock"
+    else @quantity > 6
+        return "Stock OK"
+    end
+  end
+
 
 
   def update
-    sql = "UPDATE products SET (name, description, buy_cost, sell_price) = ($1, $2, $3, $4) WHERE id = $5"
-    values = [@name, @description, @buy_cost, @sell_price, @id]
+    sql = "UPDATE products SET (name, description, buy_cost, sell_price, supplier_id, quantity) = ($1, $2, $3, $4, $5, $6) WHERE id = $7"
+    values = [@name, @description, @buy_cost, @sell_price, @supplier_id, @quantity, @id]
     SqlRunner.run(sql, values)
   end
 
