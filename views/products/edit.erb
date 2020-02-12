@@ -12,6 +12,9 @@
   <label for="buy_cost">Buying price: </label>
     <input id="buy_cost" type="number" name="buy_cost" value="<%= @product.buy_cost %>">
 
+    <label for="sell_price">Selling price: </label>
+      <input id="sell_price" type="number" name="sell_price" value="<%= @product.sell_price %>">
+
     <label for="supplier_select">Select supplier:</label>
       <select name="supplier_id" id="supplier_select" selected="<%= @product.supplier_id  %>">
         <% @suppliers.each do |supplier| %>
@@ -24,8 +27,7 @@
       </select>
 
 
-  <label for="sell_price">Selling price: </label>
-    <input id="sell_price" type="number" name="sell_price" value="<%= @product.sell_price %>">
+
 
     <label for="quantity">Quantity: </label>
       <input id="quantity" type="number" name="quantity" value="<%= @product.quantity %>">

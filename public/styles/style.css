@@ -38,6 +38,22 @@ h1 {
   font-family: Capriola;
 }
 
+p {
+  font-size: 1.8rem;
+}
+
+label {
+  font-size: 1.5rem;
+}
+ input {
+   font-size: 1.1rem;
+ }
+
+ select {
+   font-size: 1.3rem;
+ }
+
+
 
 .button {
   font: bold 11px Arial;
@@ -56,6 +72,10 @@ h1 {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+}
+
+.submit{
+  font-size: 1.4rem;
 }
 #suppliers {
   font-family: "Amethysta", Arial, Helvetica, sans-serif;
@@ -117,4 +137,12 @@ h1 {
 
   /* background-repeat: repeat; */
   background-size: contain;
+}
+
+#show {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
