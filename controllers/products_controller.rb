@@ -3,7 +3,6 @@ require( 'sinatra/contrib/all' )
 require( 'pry-byebug' )
 
 require_relative("../models/product")
-# require_relative("../models/stock")
 require_relative("../models/supplier")
 also_reload("../models/*")
 
@@ -25,10 +24,10 @@ get '/products/suppliers' do
    erb (:"products/index")
 end
 
-get '/products/stock' do
-  @products = Product.product_by_stock(params['quantity'])
-   erb (:"products/index")
-end
+# get '/products/stock' do
+#   @products = Product.product_by_stock(params['quantity'])
+#    erb (:"products/index")
+# end
 
 post '/products/:id' do
   @product = Product.new(params)

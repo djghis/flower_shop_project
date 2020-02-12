@@ -1,4 +1,4 @@
--- DROP TABLE stocks;
+
 DROP TABLE products;
 DROP TABLE suppliers;
 
@@ -21,10 +21,3 @@ CREATE TABLE products
   sell_price INT,
   quantity INT
   );
-
--- CREATE TABLE stocks
--- (
---   id SERIAL PRIMARY KEY,
---   product_id INT REFERENCES products(id),
---   quantity INT
---   );
