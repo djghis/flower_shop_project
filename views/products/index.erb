@@ -7,56 +7,44 @@
       <% @suppliers.each do |supplier| %>
         <option value=<%= supplier.id %>><%= supplier.name %></option>
       <% end %>
-  </select>
+    </select>
   <input type="submit"  value="Filter by suppliers"/>
-
 
 <br>
 <table id="products" class="searchable sortable">
 <thead>
   <tr>
-
-
     <th>Name</th>
     <th></th>
     <th>Quantity</th>
     <th></th>
-
     <th>Supplier</th>
     <th></th>
-
     <th>Buying price</th>
     <th></th>
-
     <th>Selling price</th>
     <th></th>
-
     <th>Status</th>
-
   </tr>
-  </thead>
-  <tbody>
-
-
+</thead>
+<tbody>
   <% for product in @products %>
   <tr>
     <td>
       <a href="/products/<%= product.id %>"><%= product.name %></a></td>
-      <td></td>
+    <td></td>
+    <td><%= product.quantity %></td>
+    <td></td>
+    <td><%= product.find_supplier %></td>
+    <td></td>
 
-      <td><%= product.quantity %></td>
-      <td></td>
+    <td><%= product.buy_cost %></td>
+    <td></td>
 
-      <td><%= product.find_supplier %></td>
-      <td></td>
+    <td><%= product.sell_price %></td>
+    <td></td>
 
-      <td><%= product.buy_cost %></td>
-      <td></td>
-
-      <td><%= product.sell_price %></td>
-      <td></td>
-
-      <td id="<%= product.status_css %>"><%= product.status %></td>
+    <td id="<%= product.status_css %>"><%= product.status %></td>
   </tr>
   <% end %>
 </tbody>

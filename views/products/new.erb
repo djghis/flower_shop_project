@@ -7,7 +7,7 @@
   <label for="description">Description: </label>
     <input id="description" type="text" name="description"/>
 
-    <label for="supplier_select">Select Supplier: </label>
+  <label for="supplier_select">Select Supplier: </label>
     <select name="supplier_id" id="supplier_select">
       <% @suppliers.each do |supplier| %>
           <option value=<%= supplier.id %>><%= supplier.name %></option>

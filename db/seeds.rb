@@ -47,20 +47,6 @@ product2 = Product.new({
 
 product2.save()
 
-# stock1 = Stock.new({
-#   "product_id" => product1.id,
-#   "quantity" => 8
-# })
-#
-# stock1.save()
-#
-# stock2 = Stock.new({
-#   "product_id" => product2.id,
-#   "quantity" => 10
-# })
-#
-# stock2.save()
-
 
 
 binding.pry

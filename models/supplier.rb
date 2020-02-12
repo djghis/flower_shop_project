@@ -51,13 +51,6 @@ class Supplier
     return result
   end
 
-  # def products()
-  #   products = Product.find(@product_id)
-  #   return products
-  #
-  # end
-
-
 
   def self.all()
     sql = "SELECT * FROM suppliers"

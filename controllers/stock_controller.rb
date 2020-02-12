@@ -8,12 +8,12 @@ require_relative("../models/product")
 also_reload("../models*")
 
 get '/stocks' do
-    @product = Stock.product_name()
-    erb (:"stock/index")
+  @product = Stock.product_name()
+  erb (:"stock/index")
 end
 
 get '/stocks/new' do
-    erb (:"stock/new")
+  erb (:"stock/new")
 end
 
 post '/stocks/:id' do

@@ -81,7 +81,6 @@ class Product
   def status
     if @quantity == 0
       return "Out of stock"
-
     elsif @quantity < 0
       return "ORDER QUICKLY"
     elsif @quantity <= 5
@@ -94,7 +93,6 @@ class Product
   def status_css
     if @quantity == 0
       return "out-of-stock"
-
     elsif @quantity < 0
       return "order-quickly"
     elsif @quantity <= 5

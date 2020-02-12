@@ -13,7 +13,7 @@ get '/suppliers' do
 end
 
 get '/suppliers/new' do
-    erb(:"suppliers/new")
+  erb(:"suppliers/new")
 end
 
 post '/suppliers' do
@@ -25,7 +25,7 @@ end
 get '/suppliers/:id' do
   @supplier = Supplier.find(params[:id])
   @products = Product.all
-  
+
   erb (:"suppliers/show")
 end
 
