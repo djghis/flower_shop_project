@@ -38,18 +38,24 @@ h1 {
   font-family: Capriola;
 }
 
-/* th {
-  font-size: 1.4rem;
+
+.button {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
 }
-
-tr {
-  font-size: 1.5;
-} */
-
 .center  {
   width: 100%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 #suppliers {
   font-family: "Amethysta", Arial, Helvetica, sans-serif;
@@ -84,7 +90,7 @@ tr {
   padding: 8px;
 }
 
-#products tr:nth-child(even){background-color: ##5799D3;}
+/* #products tr:nth-child(even){background-color: ##5799D3;} */
 
 #products tr:hover {background-color: #5497D2;}
 
@@ -92,6 +98,23 @@ tr {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: ##5497D2;
+  background-color: #5497D2;
   color: white;
+}
+
+#out-of-stock {
+  background-color: red;
+
+}
+
+#low-in-stock {
+  background-color: #FA723F;
+}
+
+#order-quickly {
+  color: red;
+  background-image: url("../images/warning_croped.png");
+
+  /* background-repeat: repeat; */
+  background-size: contain;
 }

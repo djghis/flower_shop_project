@@ -2,16 +2,15 @@
 
 <p>Name:  <%= @product.name %></p>
 <p>Description: <%= @product.description %></p>
-<p>Buying price: <%= @product.buy_cost %></p>
-<p>Selling price: <%= @product.sell_price %></p>
+<p>Buying price: £<%= @product.buy_cost %></p>
+<p>Selling price: £<%= @product.sell_price %></p>
+<p>Mark up: £<%= @product.markup %></p>
 <p>Supplier: <%= @product.find_supplier %></p>
 <p>Quantity: <%= @product.quantity %></p>
-<p>Status: <%= @product.status %></p> 
+<p id="<%= @product.status_css %>">Status: <%= @product.status %></p>
 
 <form class="" action="/products/<%= @product.id %>/delete" method="post">
   <input type="submit"  value="Delete product">
-
-
 </form>
 <a href="/products/<%= @product.id%>/edit" class="button">Edit this product</a>
-<a href="/suppliers/<%= @supplier_id%>" class="button">See all products by this supplier</a>
+<!-- <a href="/suppliers/<%= @supplier_id%>" class="button">See all products by this supplier</a> -->

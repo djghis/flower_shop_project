@@ -9,12 +9,25 @@ also_reload("../models/*")
 
 get '/products' do
   @products = Product.all()
+  @suppliers = Supplier.all()
   erb (:"products/index")
 end
 
 get '/products/new' do
     @suppliers = Supplier.all
     erb (:"products/new")
+end
+
+get '/products/suppliers' do
+  @products = Product.product_by_supplier(params['supplier_id'])
+  @suppliers = Supplier.all()
+
+   erb (:"products/index")
+end
+
+get '/products/stock' do
+  @products = Product.product_by_stock(params['quantity'])
+   erb (:"products/index")
 end
 
 post '/products/:id' do

@@ -1,9 +1,22 @@
 <section class="center">
 <h1>Products Inventory</h1>
 </section>
+<form class="Filter" action="/products/suppliers" method="get">
+  <label for="Filter by supplier">Suppliers</label>
+    <select class="" name="supplier_id" id="supplier_id">
+      <% @suppliers.each do |supplier| %>
+        <option value=<%= supplier.id %>><%= supplier.name %></option>
+      <% end %>
+  </select>
+  <input type="submit"  value="Filter by suppliers"/>
+
+
 <br>
-<table id="products">
+<table id="products" class="searchable sortable">
+<thead>
   <tr>
+
+
     <th>Name</th>
     <th></th>
     <th>Quantity</th>
@@ -19,7 +32,12 @@
     <th></th>
 
     <th>Status</th>
+
   </tr>
+  </thead>
+  <tbody>
+
+
   <% for product in @products %>
   <tr>
     <td>
@@ -38,15 +56,8 @@
       <td><%= product.sell_price %></td>
       <td></td>
 
-      <td><%= product.status %></td>
+      <td id="<%= product.status_css %>"><%= product.status %></td>
   </tr>
   <% end %>
-
+</tbody>
 </table>
-
-
-
-
-<p>
-
-</p>

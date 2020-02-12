@@ -50,10 +50,33 @@ class Product
     return result.id
   end
 
-  # def supplier()
-  #   supplier = Supplier.find(@supplier_id)
-  #   return supplier
-  # end
+  def self.product_by_supplier(id)
+    sql = "SELECT * From products WHERE supplier_id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    return results.map {|product| Product.new(product)}
+  end
+
+  def self.product_by_stock()
+    sql = "SELECT * From products WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    return results.map {|product| Product.new(product)}
+  end
+
+  def markup
+    return  @sell_price - @buy_cost
+  end
+
+
+  def sort_alphabet
+    @Products = Product.order(:name)
+  end
+
+
+  def sort_by_stock
+    @Products = Product.order(:quantity)
+  end
 
   def status
     if @quantity == 0
@@ -65,6 +88,19 @@ class Product
       return "Low in stock"
     else @quantity > 6
         return "Stock OK"
+    end
+  end
+
+  def status_css
+    if @quantity == 0
+      return "out-of-stock"
+
+    elsif @quantity < 0
+      return "order-quickly"
+    elsif @quantity <= 5
+      return "low-in-stock"
+    else @quantity > 6
+        return "stock-OK"
     end
   end
 
