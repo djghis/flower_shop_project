@@ -31,4 +31,4 @@ You will need chrome and sort extension to sort tables by alphabetical or numeri
 
 TECHNOLOGIES USED 
 
-Ruby, Psql, Html and CSS.
+Ruby, Psql, Html and CSS, Sinatra and PG gem.
