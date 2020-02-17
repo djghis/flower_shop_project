@@ -24,10 +24,6 @@ get '/products/suppliers' do
    erb (:"products/index")
 end
 
-# get '/products/stock' do
-#   @products = Product.product_by_stock(params['quantity'])
-#    erb (:"products/index")
-# end
 
 post '/products/:id' do
   @product = Product.new(params)

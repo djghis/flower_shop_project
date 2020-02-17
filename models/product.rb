@@ -56,31 +56,14 @@ class Product
     results = SqlRunner.run(sql, values)
     return results.map {|product| Product.new(product)}
   end
-  #
-  # def self.product_by_stock()
-  #   sql = "SELECT * From products WHERE id = $1"
-  #   values = [id]
-  #   results = SqlRunner.run(sql, values)
-  #   return results.map {|product| Product.new(product)}
-  # end
+
 
   def markup
     return  @sell_price - @buy_cost
   end
 
 
-  # def sort_alphabet
-  #   @Products = Product.order(:name)
-  #   products = Product.all()
-  #   return products.sort_by {|product| product.name }
-  # end
-
-
-  # def sort_by_stock
-  #   @Products = Product.order(:quantity)
-  # end
-
-  def status
+    def status
     if @quantity == 0
       return "Out of stock"
     elsif @quantity < 0
@@ -138,6 +121,13 @@ class Product
     sql = "DELETE FROM products"
     SqlRunner.run( sql )
   end
+
+  # def sort_alphabet
+  #   @Products = Product.order(:name)
+  #   products = Product.all()
+  #   return products.sort_by {|product| product.name }
+  # end
+
 
 
 

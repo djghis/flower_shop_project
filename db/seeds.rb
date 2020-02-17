@@ -1,10 +1,8 @@
 require_relative( "../models/product" )
-require_relative( "../models/stock" )
 require_relative( "../models/supplier" )
 require("pry-byebug")
 
 Product.delete_all()
-# Stock.delete_all()
 Supplier.delete_all()
 
 supplier1 = Supplier.new({
